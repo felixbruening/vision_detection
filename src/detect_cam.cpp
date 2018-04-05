@@ -5,21 +5,31 @@
 #include "detect_cam.h"
 #include <opencv/cv.h>
 #include <opencv/highgui.h>
+#include "opencv2/opencv.hpp"
 
 using namespace cv;
 using namespace std;
 
 int main(){
 
-    VideoCapture camera;
+    VideoCapture camera(0);
 
-    Mat frame;
+    Mat edges;
 
-    capture.open(0);
+    //namedWindow("edges",1);
+
+    if(!camera.isOpened())
+        return -1;
 
     while(1){
-        camera.read(frame);
+        Mat frame;
+        camera >> frame;
 
-        imgshow("Test", frame);
+        cvtColor(frame, edges, CV_BGR2GRAY);
+
+        imshow("Test", edges);
+
+        if(waitKey(30) >= 0) break;
     }
+    return 0;
 }

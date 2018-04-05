@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Felix/OneDrive/Computer_vision/vision_detection/src/detect_cam.cpp
+detect_cam.h
+/Users/Felix/OneDrive/Computer_vision/vision_detection/src/detect_cam.h
+opencv/cv.h
+-
+opencv/highgui.h
+-
+opencv2/opencv.hpp
+/Users/Felix/OneDrive/Computer_vision/vision_detection/src/opencv2/opencv.hpp
+
+/Users/Felix/OneDrive/Computer_vision/vision_detection/src/detect_cam.h
+
