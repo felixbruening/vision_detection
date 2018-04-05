@@ -10,8 +10,18 @@
 using namespace cv;
 using namespace std;
 
-int main(){
+int main(int argc, char **argv){
+    const char *cascade_file = "/opt/local/share/opencv/..";
+    CvHaarClassifier *cascade = 0;
+    CvMemStorage *storage = 0;
+    CvSeq *obj;
 
+    /**
+     * create cascader for Objects
+     */ 
+    cascade = (CvHaarClassifier*) cvLoad(cascade_file, 0, 0, 0);
+    CvCapture *capture = cvCreateCameraCapture(0);
+     //opens camera
     VideoCapture camera(0);
 
     Mat edges;
